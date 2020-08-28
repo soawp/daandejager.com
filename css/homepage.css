@@ -1,20 +1,42 @@
 *{
-    font-family: 'Lexend Peta', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 100%;
     list-style: none;
     text-decoration: none;
-    color: #05386B;
+    color: #EDF5E1;
+    padding: 0px;
+    margin: 0px;
+}
+header{
+
 }
 body{
+    width: 100%;
     background-color: #5CDB95;
 }
-li{
+#name_menu{
     display: flex;
-    justify-content: center;
+    padding: 20px;
+position: absolute;
+}
+#menu{
+    padding: 20px;
+    margin-left: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    
 }
 ul{
-    padding-top: 20px;
+    padding: 20px;
 }
-#logo_soap{
-    widows: 100px;
-    height: 100px;
+footer{
+    background-color: #05386B;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    overflow: hidden;
 }
+
