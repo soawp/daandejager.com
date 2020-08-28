@@ -64,6 +64,12 @@ position: absolute;
     justify-content: right;
     
 }
+#form{
+    text-decoration: underline;
+}
+#form:hover{
+    text-decoration: none;
+}
 ul{
     padding: 20px;
 }
