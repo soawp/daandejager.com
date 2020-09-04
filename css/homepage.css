@@ -1,85 +1,73 @@
-*{
-    font-family: 'Ubuntu', sans-serif;
-    list-style: none;
-    text-decoration: none;
-    padding: 0px;
-    margin: 0px;
-    opacity: 100%;
-    color: #94a1a8;
+* {
+  font-family: "Ubuntu", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+  opacity: 100%;
+  color: white;
+  background-color: #1c1c1c;
+}
 
-}
-#daan{
-  margin: 10px;
-  position: absolute;
-}
-#fall{
-  margin-left: 700px;
-  height: 1000px;
-  width: 650px;
-  position: absolute;
-}
-#contact{
-  border-radius: 10px;
+#menu {
   display: flex;
-  justify-content: center;
-  width: 75px;
-  height: 30px;
-  color: #0acf97;
+  justify-content: right;
 }
-#sidebar{
-  width: 100%;
-  display: flex;
-  justify-content: center;
+li {
+  margin: 20px;
 }
-#p{
-  opacity: 0.4;
+#text {
+  opacity: 0.6;
 }
-body{
-  background-color: #f5f6fa;
-}
-li{
-  margin: 10px;
-  display: flex;
-  justify-content: center;
+#work {
+  margin-left: 10px;
+  color: #2c81f7;
   opacity: 0.6;
   transition: 0.6s;
 }
-li:hover{
+#work:hover {
   opacity: 1;
 }
-ul{
-  display: flex;
-  justify-content: center;
+#top {
+  margin: 150px;
+  border-left: solid #2c81f7 3px;
 }
-body{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #0c131e;
+#text,
+#text1 {
+  margin-left: 10px;
 }
-#hometext{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #0c131e;
-  margin-left: 350px;
-  margin-top: 200px;
-}
-h2{
-  justify-content: center;
-  color: #313a46;
-}
-a{
-  color: #313a46;
-}
-#contactbutton{
-  color: #727cf5;
+#menuli {
   opacity: 0.6;
   transition: 0.6s;
 }
-#contactbutton:hover{
+#menuli:hover {
   opacity: 1;
 }
-
-
-        
+#contact {
+  opacity: 0.6;
+  transition: 0.6s;
+  color: #2c81f7;
+}
+#contact:hover {
+  opacity: 1;
+}
+@keyframes example {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
+#text1 {
+  color: white;
+  animation-name: example;
+  animation-duration: 4s;
+}
+#footer{
+  opacity: 0.6;
+  transition: 0.6s;
+}
+#footerli:hover{
+  opacity: 1;
+}
