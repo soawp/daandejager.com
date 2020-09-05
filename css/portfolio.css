@@ -1,0 +1,53 @@
+#mitch{
+    width: 600px;
+    height: 200px;
+    box-shadow: 5px 5px 0px #feda6a;
+}
+#nade{
+    width: 600px;
+    height: 200px;
+    box-shadow: 5px 5px 0px #feda6a;
+}
+img{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    
+}
+#ewok{
+    display: flex;
+    width: 600px;
+    height: 338px;
+    box-shadow: 5px 5px 0px #feda6a;
+    
+}
+#images{
+    display: flex;
+    justify-content: center;
+}
+#images1{
+    display: flex;
+    justify-content: center;
+}
+#images2{
+    display: flex;
+    justify-content: center;
+}
+#cntrllr{
+    width: 600px;
+    height: 800px;
+    box-shadow: 5px 5px 0px #feda6a;
+}
+#norcal{
+    display: flex;
+    width: 600px;
+    height: 300px;
+    box-shadow: 5px 5px 0px #feda6a;
+    flex-direction: column;
+}
+#rosanna{
+    display: flex;
+    justify-content: center;
+    height: 800px;
+    box-shadow: 5px 5px 0px #feda6a;
+}
