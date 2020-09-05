@@ -58,7 +58,40 @@ width: 30%;
     color: #d4d4dc;
     font-size: 20px;
     display: flex;
-    margin-left: 40%;
+    margin-left: 37%;
     border-left: 1px solid #feda6a;
 }
+.myButton {
+	background-color:#feda6a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:14px 150px;
+	text-decoration:none;
+}
+.myButton2 {
+	background-color:#414757;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:14px 150px;
+	text-decoration:none;
+}
+#buttons{
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+}
+#footer{
+    background-color:#1d1e22;
+    position: fixed;
+    width: 100%;
+    height: 20%;
+    margin-top: 0%;
+    justify-content: center;
 
+}
