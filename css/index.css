@@ -1,11 +1,15 @@
 *{
-    font-family: 'Roboto', sans-serif;
-    list-style: none;
+    font-family: 'Ubuntu Condensed', sans-serif;    list-style: none;
     text-decoration: none;
     color: white;
 }
 li{
     color: black;
+}
+#daan{
+    font-family: 'Playfair Display', serif;    position: absolute;
+    margin: 17px;
+    opacity: 0.6;
 }
 #menu{
     width: 100%;
@@ -18,10 +22,11 @@ li{
     margin: 20px;
 }
 body{
-    background: linear-gradient(to right, #1d1e22 51.5%, #393f4d 50%);
+    background: linear-gradient(to right, #1d1e22 50%, #393f4d 50%);
 
 }
 #menuham{
+    margin-right: 60px;
     justify-content: center;
 }
 #one{
@@ -33,5 +38,27 @@ margin: 20px;
 
 height: 75px;
 width: 30%;
+}
+#ddj{
+        color: #d4d4dc;
+    font-size: 75px;
+    display: flex;
+    justify-content: center;
+}
+#dd{
+    color: #feda6a;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+#f{
+  margin: 15px;
+}
+#d{
+    color: #d4d4dc;
+    font-size: 20px;
+    display: flex;
+    margin-left: 40%;
+    border-left: 1px solid #feda6a;
 }
 
