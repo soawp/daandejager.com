@@ -1,0 +1,37 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+li{
+    color: black;
+}
+#menu{
+    width: 100%;
+}
+ul{
+    display: flex;
+    justify-content: center;
+}
+li{
+    margin: 20px;
+}
+body{
+    background: linear-gradient(to right, #1d1e22 51.5%, #393f4d 50%);
+
+}
+#menuham{
+    justify-content: center;
+}
+#one{
+display: flex;
+justify-content: center;
+margin: 20px;
+}
+#button1{
+
+height: 75px;
+width: 30%;
+}
+
