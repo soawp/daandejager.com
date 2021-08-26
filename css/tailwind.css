@@ -15358,6 +15358,12 @@ video {
 .bg-current {
   background-color: currentColor;
 }
+.bg-primary {
+  background-color: #323444;
+}
+.bg-secondary {
+  background-color: #232533;
+}
 
 .bg-black {
   --tw-bg-opacity: 1;
