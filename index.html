@@ -16,13 +16,20 @@
     <title>Daan de Jager</title>
 </head>
 <body>
-    <div class="camera">
-       <div class="map pixel-art">
-          <div class="character" facing="down" walking="true">
+    <div class="camera" id="upstairsCamera">
+       <div class="map pixel-art" id="upstairs">
+          <div class="character" facing="down" walking="true" id="character">
              <div class="shadow pixel-art"></div>
              <div class="character_spritesheet pixel-art"></div>
           </div>
+          <div id="computer" style="display: none;">
+            <button id="aboutMeFile"><img draggable="false" src="img/file.png" alt="" style="background-size: 100%;"></button>
+            <button id="aboutMeFile"><img draggable="false" src="img/file.png" alt="" style="background-size: 100%;"></button>
+            <button id="aboutMeFile"><img draggable="false" src="img/file.png" alt="" style="background-size: 100%;"></button>
+            <button onclick="closeComputer();" id="closeBtn"><img draggable="false" src="img/close.png" alt="" style="background-size: 100%;"></button>
+          </div>
        </div>
+     </div>
        <div class="dpad">
           <div class="DemoDirectionUI flex-center">
                 <button class="dpad-button dpad-left">
@@ -70,13 +77,10 @@
                     </svg>
                 </button>
             </div>
-       </div>                        
-    </div>
-    <div class="data" id="data">
-        <p class="" id="text">
-        <div class="" id="selectText"></div>
-        <button onclick="addOneToIndex()" id="next">next</button>
-        <button onclick="removeOneFromIndex()" id="back">back</button>
+       </div>  
+       <div class="dialog" id="dialog" style="display: none">
+            <div class="divText"><p id="dialogText"></p></div>
+        </div>                      
     </div>
  </div>
     <script src="js/border.js"></script>

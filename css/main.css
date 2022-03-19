@@ -32,17 +32,60 @@
  .pixel-art {
     image-rendering: pixelated;
  }
+ .dialog {
+   image-rendering: pixelated;
+ }
 
+ .divText {
+   margin-top: 11%;
+   text-align: center;
+   color: #fff;
+ }
 
- .map {
+ #dialog {
+    text-align: center;
+    top: 0;
     image-rendering: pixelated;
-    background-image: url("img/house.gif");
+    background: url("img/jitzeDialog.gif") no-repeat;
     background-size: 100%;
     width: calc(13 * var(--grid-cell));
-    height: calc(10 * var(--grid-cell));
+    height: calc(12 * var(--grid-cell));
+    position: absolute;
+ }
+
+ #aboutMeFile {
+   margin-top: 10%;
+   margin-left: 3%;
+   image-rendering: pixelated;
+   width: 70px;
+}
+#computer {
+   display: none;
+}
+#closeBtn {
+   margin-top: 10%;
+   margin-right: 3%;
+   position: absolute;
+   top:0;
+   right: 0;
+   width: 40px;
+}
+ #upstairs {
+   image-rendering: pixelated;
+    background: url("img/upstairs.gif");
+    background-size: 100%;
+    width: calc(13 * var(--grid-cell));
+    height: calc(12 * var(--grid-cell));
     position: relative;
  }
- 
+ #downstairs {
+   image-rendering: pixelated;
+   background: url("img/house.gif");
+   background-size: 100%;
+   width: calc(13 * var(--grid-cell));
+   height: calc(12 * var(--grid-cell));
+   position: relative;
+ }
  .character {
     width: calc( var(--grid-cell)* 2 );
     height: calc( var(--grid-cell)* 2 );
