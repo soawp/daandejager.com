@@ -23,11 +23,18 @@
              <div class="character_spritesheet pixel-art"></div>
           </div>
           <div id="computer" style="display: none;">
-            <button id="aboutMeFile"><img draggable="false" src="img/file.png" alt="" style="background-size: 100%;"></button>
-            <button id="aboutMeFile"><img draggable="false" src="img/file.png" alt="" style="background-size: 100%;"></button>
-            <button id="aboutMeFile"><img draggable="false" src="img/file.png" alt="" style="background-size: 100%;"></button>
+            <button onclick="openAboutMe()" id="aboutMeFile"><img draggable="false" src="img/aboutme.png" alt="" style="background-size: 100%;"></button>
+            <button onclick="openMyWork()" id="aboutMeFile"><img draggable="false" src="img/mywork.png" alt="" style="background-size: 100%;"></button>
+            <button onclick="openContactMe()" id="aboutMeFile"><img draggable="false" src="img/contactme.png" alt="" style="background-size: 100%;"></button>
             <button onclick="closeComputer();" id="closeBtn"><img draggable="false" src="img/close.png" alt="" style="background-size: 100%;"></button>
           </div>
+        <div id="aboutme" style="display: none;">
+            <button onclick="openAboutMe()" id="closeAboutBtn"><img draggable="false" src="img/closebutton.png" alt="" style="background-size: 100%;"></button>
+            <p class="aboutMeText">Hello, my name is Daan. I'm a software developer / graphic designer. I'm currently studying software development and trying to become better.</p>
+        </div>
+        <div id="contactme" style="display: none;">
+            <button onclick="openContactMe()" id="closeAboutBtn"><img draggable="false" src="img/closebutton.png" alt="" style="background-size: 100%;"></button>
+        </div>
        </div>
      </div>
        <div class="dpad">
@@ -83,8 +90,7 @@
         </div>                      
     </div>
  </div>
-    <script src="js/border.js"></script>
-    <script src="js/index.js"></script>
+     <script src="js/index.js"></script>
     <div id="javascript-jq">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

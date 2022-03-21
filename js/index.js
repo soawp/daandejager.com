@@ -130,7 +130,7 @@ const placeCharacter = () => {
       if (!semafoor) {
          char.style.display = "none";
          y = 40;
-         upstairs.style.backgroundImage = `url("img/pc.gif")`;
+         upstairs.style.backgroundImage = `url("img/screen.png")`;
          computer.style.display="block"
          semafoor = true;
       }
@@ -303,4 +303,26 @@ function typeWriter() {
         i++;
         setTimeout(typeWriter, typingSpeed);
     }
+}
+
+function openAboutMe() {
+   var x = document.getElementById("aboutme");
+   if (x.style.display === "none") {
+      x.style.display = "block";
+   } else {
+      x.style.display = "none";
+   }
+}
+
+function openMyWork() {
+
+}
+
+function openContactMe() {
+   var x = document.getElementById("contactme");
+   if (x.style.display === "none") {
+      x.style.display = "block";
+   } else {
+      x.style.display = "none";
+   }
 }

@@ -57,7 +57,7 @@
    margin-top: 10%;
    margin-left: 3%;
    image-rendering: pixelated;
-   width: 70px;
+   width: 100px;
 }
 #computer {
    display: none;
@@ -70,6 +70,14 @@
    right: 0;
    width: 40px;
 }
+#closeAboutBtn {
+   margin-top: 9.2%;
+   margin-right: 2.4%;
+   position: absolute;
+   top:0;
+   right: 0;
+   width: 47px;
+}
  #upstairs {
    image-rendering: pixelated;
     background: url("img/upstairs.gif");
@@ -77,6 +85,27 @@
     width: calc(13 * var(--grid-cell));
     height: calc(12 * var(--grid-cell));
     position: relative;
+ }
+ #aboutme {
+   top: 0;
+   image-rendering: pixelated;
+   background: url("img/aboutMe.gif");
+   background-size: 100%;
+   width: calc(13 * var(--grid-cell));
+   height: calc(12 * var(--grid-cell));
+   position: absolute;
+ }
+ .container {
+    
+ }
+ #contactme {
+   top: 0;
+   image-rendering: pixelated;
+   background: url("img/page.png");
+   background-size: 100%;
+   width: calc(13 * var(--grid-cell));
+   height: calc(12 * var(--grid-cell));
+   position: absolute;
  }
  #downstairs {
    image-rendering: pixelated;
@@ -252,4 +281,12 @@
     left: 40%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+.aboutMeText {
+   padding: 10%;
+   color: #fff;
+   width: 60%;
+   margin-top: 22%;
+   font-size: 1.5vmax;
 }
