@@ -110,8 +110,9 @@
    position: absolute;
    z-index: 100000000;
  }
- .container {
-    
+ .contactForm {
+    position: absolute;
+    z-index: 100000000000;
  }
  #contactme {
    top: 0;

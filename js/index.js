@@ -16,92 +16,100 @@ var i = 0;
 var typingSpeed = 50;
 var selectedRoom = 1;
 var semafoor = false;
+var busy = false;
 //start in the middle of the map
 var x = 87;
 var y = 44;
 var held_directions = []; //State of which arrow keys we are holding down
 var speed = 1; //How fast the character moves in pixels per frame
 
-document.addEventListener("keyup", function(event) {
+document.addEventListener("keyup", function (event) {
    if (event.keyCode === 69) {
    }
 });
 
 const placeCharacter = () => {
-   
+
    var pixelSize = parseInt(
       getComputedStyle(document.documentElement).getPropertyValue('--pixel-size')
    );
-   
+
    const held_direction = held_directions[0];
    if (held_direction) {
-      if (held_direction === directions.right) {x += speed;}
-      if (held_direction === directions.left) {x -= speed;}
-      if (held_direction === directions.down) {y += speed;}
-      if (held_direction === directions.up) {y -= speed;}
+      if (held_direction === directions.right) { x += speed; }
+      if (held_direction === directions.left) { x -= speed; }
+      if (held_direction === directions.down) { y += speed; }
+      if (held_direction === directions.up) { y -= speed; }
       character.setAttribute("facing", held_direction);
    }
    character.setAttribute("walking", held_direction ? "true" : "false");
-   if (selectedRoom === 0 ){
+   if (selectedRoom === 0) {
       selectedRoom = 1;
-   } 
+   }
    if (selectedRoom === 1) {
-   semafoor = false;
-   upstairs.style.backgroundImage = `url("img/house.gif")`;
-   interactText.style.display = "none";
-   var leftLimit = -2;
-   var rightLimit = (16 * 11)+2;
-   var topLimit = 29;
-   var bottomLimit = 150;
-   //shelf
-   if (x > 170 && y === 48) { y= 47;} 
-   if (x === 170 && y > 48 && y< 135) { x = 169;} 
-   if (x > 170 && y === 135) { y= 136;} 
-   //desk
-   if (x > 28 && x < 150 && y === 58) { y= 57;} 
-   if (x === 28 && y > 58 && y< 128) { x = 27;} 
-   if (x> 28 && x < 150 && y === 128) { y= 129;} 
-   if (x === 150 && y > 58 && y< 128) { x = 151;} 
-   //bank
-   if (x < 4 && y === 44) { y= 43;} 
-   if (x === 4 && y > 44 && y< 90) { x = 5; } 
-   if (x < 4 && y === 90) { y= 91;} 
-   //interactions
-   if (x === 27 && y > 86 && y< 101) {
-      interactText.style.display = "block";
-      document.addEventListener("keyup", function(event) {
-         if (event.keyCode === 69) {
-            aboutme.style.display = "block";
-            interactText.style.display = "none";
-         }
-     });
-   } else {
-      aboutme.style.display = "none";
-   }
-   if (x> 83 && x < 99 && y === 129) {interactText.style.display = "block";   document.addEventListener("keyup", function(event) {
-      if (event.keyCode === 69) {
-         computer.style.display = "block";
-         interactText.style.display = "none";
+      semafoor = false;
+      upstairs.style.backgroundImage = `url("img/house.gif")`;
+      interactText.style.display = "none";
+      var leftLimit = -2;
+      var rightLimit = (16 * 11) + 2;
+      var topLimit = 29;
+      var bottomLimit = 150;
+      //shelf
+      if (x > 170 && y === 48) { y = 47; }
+      if (x === 170 && y > 48 && y < 135) { x = 169; }
+      if (x > 170 && y === 135) { y = 136; }
+      //desk
+      if (x > 28 && x < 150 && y === 58) { y = 57; }
+      if (x === 28 && y > 58 && y < 128) { x = 27; }
+      if (x > 28 && x < 150 && y === 128) { y = 129; }
+      if (x === 150 && y > 58 && y < 128) { x = 151; }
+      //bank
+      if (x < 4 && y === 44) { y = 43; }
+      if (x === 4 && y > 44 && y < 90) { x = 5; }
+      if (x < 4 && y === 90) { y = 91; }
+      //interactions
+      if (x === 27 && y > 86 && y < 101) {
+         interactText.style.display = "block";
+         document.addEventListener("keyup", function (event) {
+            if (event.keyCode === 69) {
+               aboutme.style.display = "block";
+               interactText.style.display = "none";
+            }
+         });
+      } else {
+         aboutme.style.display = "none";
       }
-  });} else {
-   computer.style.display = "none";
-  }
+      if (x > 83 && x < 99 && y === 129) {
+         interactText.style.display = "block"; document.addEventListener("keyup", function (event) {
+            if (event.keyCode === 69) {
+               computer.style.display = "block";
+               interactText.style.display = "none";
+            }
+         });
+      } else {
+         computer.style.display = "none";
+      }
 
-  if (x === 151 && y > 86 && y< 101) {interactText.style.display = "block";   document.addEventListener("keyup", function(event) {
-      if (event.keyCode === 69) {
-         contactme.style.display = "block";
-         interactText.style.display = "none";
+      if (x === 151 && y > 86 && y < 101) {
+         interactText.style.display = "block"; document.addEventListener("keyup", function (event) {
+            if (event.keyCode === 69) {
+               contactme.style.display = "block";
+               interactText.style.display = "none";
+            }
+         });
+      } else {
+         contactme.style.display = "none";
       }
-   });} else {
-   contactme.style.display = "none";
-   }
+
+      
    }
    if (x < leftLimit) { x = leftLimit; }
    if (x > rightLimit) { x = rightLimit; }
    if (y < topLimit) { y = topLimit; }
    if (y > bottomLimit) { y = bottomLimit; }
    console.log(x, y);
-   character.style.transform = `translate3d( ${x*pixelSize}px, ${y*pixelSize}px, 0 )`;  
+   console.log(busy);
+   character.style.transform = `translate3d( ${x * pixelSize}px, ${y * pixelSize}px, 0 )`;
 }
 
 
@@ -133,6 +141,10 @@ const keys = {
    83: directions.down,
    68: directions.right,
 }
+
+if (!busy) {
+   console.log("busy");
+   console.log(busy);
 document.addEventListener("keydown", (e) => {
    var dir = keys[e.which];
    if (dir && held_directions.indexOf(dir) === -1) {
@@ -147,6 +159,7 @@ document.addEventListener("keyup", (e) => {
       held_directions.splice(index, 1)
    }
 });
+}
 
 var isPressed = false;
 const removePressedAll = () => {
@@ -164,15 +177,15 @@ document.body.addEventListener("mouseup", () => {
    held_directions = [];
    removePressedAll();
 })
-const handleDpadPress = (direction, click) => {   
+const handleDpadPress = (direction, click) => {
    if (click) {
       isPressed = true;
    }
    held_directions = (isPressed) ? [direction] : []
-   
+
    if (isPressed) {
       removePressedAll();
-      document.querySelector(".dpad-"+direction).classList.add("pressed");
+      document.querySelector(".dpad-" + direction).classList.add("pressed");
    }
 }
 //Bind a ton of events for the dpad
@@ -195,11 +208,11 @@ document.querySelector(".dpad-down").addEventListener("mouseover", (e) => handle
 
 
 function hideData() {
-    var dialog = document.getElementById("dialog");
-    dialog.style.display = "none";
-    i = 0;
-    document.getElementById("dialogText").innerHTML = "";
-} 
+   var dialog = document.getElementById("dialog");
+   dialog.style.display = "none";
+   i = 0;
+   document.getElementById("dialogText").innerHTML = "";
+}
 function showData(charIndex) {
    var dialog = document.getElementById("dialog");
    if (dialog.style.display === "none") {
@@ -220,20 +233,21 @@ function showData(charIndex) {
 }
 function closeComputer() {
    char.style.display = "block";
-   if(computer.style.display === "block"){
+   if (computer.style.display === "block") {
       computer.style.display = "none"
    } else {
       computer.style.display = "block"
    }
    upstairs.style.backgroundImage = `url("img/upstairs.gif")`;
-   setTimeout(() => {selectedRoom = 0}, 500);}
+   setTimeout(() => { selectedRoom = 0 }, 500);
+}
 
 function typeWriter() {
-  if (i < text.length) {
-        document.getElementById("dialogText").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, typingSpeed);
-    }
+   if (i < text.length) {
+      document.getElementById("dialogText").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, typingSpeed);
+   }
 }
 
 function openAboutMe() {
@@ -246,7 +260,7 @@ function openAboutMe() {
 }
 
 function openMyWork() {
-   
+
 }
 
 function openContactMe() {
@@ -258,8 +272,8 @@ function openContactMe() {
    }
 }
 
-window.addEventListener("load", function(){
-   setTimeout(function() {
+window.addEventListener("load", function () {
+   setTimeout(function () {
       loader.style.display = "none";
    }, 1000)
 });
