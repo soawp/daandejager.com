@@ -59,9 +59,15 @@
    image-rendering: pixelated;
    width: 100px;
 }
-#computer {
-   display: none;
-}
+#aboutme {
+   image-rendering: pixelated;
+   background: url("img/aboutbook.png");
+   background-size: 100%;
+   width: calc(13 * var(--grid-cell));
+   height: calc(12 * var(--grid-cell));
+   position: absolute;
+   z-index: 100000000;
+ }
 #closeBtn {
    margin-top: 10%;
    margin-right: 3%;
@@ -86,14 +92,23 @@
     height: calc(12 * var(--grid-cell));
     position: relative;
  }
- #aboutme {
-   top: 0;
+ #computer {
    image-rendering: pixelated;
-   background: url("img/aboutMe.gif");
+   background: url("img/laptop.png");
    background-size: 100%;
    width: calc(13 * var(--grid-cell));
    height: calc(12 * var(--grid-cell));
    position: absolute;
+   z-index: 100000000;
+ }
+ #aboutme {
+   image-rendering: pixelated;
+   background: url("img/aboutbook.png");
+   background-size: 100%;
+   width: calc(13 * var(--grid-cell));
+   height: calc(12 * var(--grid-cell));
+   position: absolute;
+   z-index: 100000000;
  }
  .container {
     
@@ -101,7 +116,7 @@
  #contactme {
    top: 0;
    image-rendering: pixelated;
-   background: url("img/page.png");
+   background: url("img/mail.png");
    background-size: 100%;
    width: calc(13 * var(--grid-cell));
    height: calc(12 * var(--grid-cell));
@@ -285,9 +300,10 @@
 
 .aboutMeText {
    padding: 10%;
-   color: #fff;
-   width: 60%;
-   margin-top: 22%;
+   color: #000;
+   width: 50%;
+   margin-top: 14%;
+   margin-left: 6%;
    font-size: 1.5vmax;
 }
 
@@ -310,4 +326,16 @@
    height: 100vh;
    position: absolute;
    overflow:hidden;
+}
+.interactText {
+   color: #FFF;
+   text-align: center;
+   position: absolute;
+   z-index: 99;
+   margin: 0 auto;
+   left: 0;
+   right: 0;
+}
+.interactImage{
+   display: inline;
 }

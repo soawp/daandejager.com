@@ -20,23 +20,21 @@
         <div class="loader"></div>
     </div>
     <div class="camera" id="upstairsCamera">
+        <div id="interactText" class="interactText"><h1>press <img class="interactImage" src="img/use.png"> to interact</h1></div>
        <div class="map pixel-art" id="upstairs">
           <div class="character" facing="down" walking="true" id="character">
              <div class="shadow pixel-art"></div>
              <div class="character_spritesheet pixel-art"></div>
           </div>
           <div id="computer" style="display: none;">
-            <button onclick="openAboutMe()" id="aboutMeFile"><img draggable="false" src="img/aboutme.png" alt="" style="background-size: 100%;"></button>
-            <button onclick="openMyWork()" id="aboutMeFile"><img draggable="false" src="img/mywork.png" alt="" style="background-size: 100%;"></button>
-            <button onclick="openContactMe()" id="aboutMeFile"><img draggable="false" src="img/contactme.png" alt="" style="background-size: 100%;"></button>
-            <button onclick="closeComputer();" id="closeBtn"><img draggable="false" src="img/close.png" alt="" style="background-size: 100%;"></button>
+            <button onclick="closeComputer();" id="closeBtn"><img draggable="false" src="img/exitbutton.png" alt="" style="background-size: 100%;"></button>
           </div>
         <div id="aboutme" style="display: none;">
-            <button onclick="openAboutMe()" id="closeAboutBtn"><img draggable="false" src="img/closebutton.png" alt="" style="background-size: 100%;"></button>
-            <p class="aboutMeText">Hello, my name is Daan. I'm a software developer / graphic designer. I'm currently studying software development and trying to become better.</p>
+            <button onclick="openAboutMe()" id="closeAboutBtn"><img draggable="false" src="img/exitButton.png" alt="" style="background-size: 100%;"></button>
+            <p class="aboutMeText">Hello, my name is Daan. I'm a software developer and graphic designer based in The Netherlands. I am currently studying to become a full-stack developer</p>
         </div>
         <div id="contactme" style="display: none;">
-            <button onclick="openContactMe()" id="closeAboutBtn"><img draggable="false" src="img/closebutton.png" alt="" style="background-size: 100%;"></button>
+            <button onclick="openContactMe()" id="closeAboutBtn"><img draggable="false" src="img/exitButton.png" alt="" style="background-size: 100%;"></button>
         </div>
        </div>
      </div>

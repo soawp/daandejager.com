@@ -1,10 +1,14 @@
 var character = document.querySelector(".character");
 var map = document.querySelector(".map");
 var upstairs = document.getElementById("upstairs");
-var computer = document.getElementById("computer");
 var char = document.getElementById("character");
 var dialog = document.getElementById("dialog");
 var loader = document.getElementById("preloader");
+var interactText = document.getElementById("interactText");
+var aboutme = document.getElementById("aboutme");
+var computer = document.getElementById("computer");
+var contactme = document.getElementById("contactme");
+
 
 var data = false;
 var text = '';
@@ -17,6 +21,11 @@ var x = 87;
 var y = 44;
 var held_directions = []; //State of which arrow keys we are holding down
 var speed = 1; //How fast the character moves in pixels per frame
+
+document.addEventListener("keyup", function(event) {
+   if (event.keyCode === 69) {
+   }
+});
 
 const placeCharacter = () => {
    
@@ -39,6 +48,7 @@ const placeCharacter = () => {
    if (selectedRoom === 1) {
    semafoor = false;
    upstairs.style.backgroundImage = `url("img/house.gif")`;
+   interactText.style.display = "none";
    var leftLimit = -2;
    var rightLimit = (16 * 11)+2;
    var topLimit = 29;
@@ -57,13 +67,34 @@ const placeCharacter = () => {
    if (x === 4 && y > 44 && y< 90) { x = 5; } 
    if (x < 4 && y === 90) { y= 91;} 
    //interactions
-   if (x === 28 && y > 86 && y< 101) {openAboutMe()} 
+   if (x === 27 && y > 86 && y< 101) {
+      interactText.style.display = "block";
+      document.addEventListener("keyup", function(event) {
+         if (event.keyCode === 69) {
+            aboutme.style.display = "block";
+            interactText.style.display = "none";
+         }
+     });
+   } else {
+      aboutme.style.display = "none";
+   }
+   if (x> 83 && x < 99 && y === 129) {interactText.style.display = "block";   document.addEventListener("keyup", function(event) {
+      if (event.keyCode === 69) {
+         computer.style.display = "block";
+         interactText.style.display = "none";
+      }
+  });} else {
+   computer.style.display = "none";
+  }
 
-   
-
-
-
-
+  if (x === 151 && y > 86 && y< 101) {interactText.style.display = "block";   document.addEventListener("keyup", function(event) {
+      if (event.keyCode === 69) {
+         contactme.style.display = "block";
+         interactText.style.display = "none";
+      }
+   });} else {
+   contactme.style.display = "none";
+   }
    }
    if (x < leftLimit) { x = leftLimit; }
    if (x > rightLimit) { x = rightLimit; }
