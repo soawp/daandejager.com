@@ -18,10 +18,10 @@ var selectedRoom = 1;
 var semafoor = false;
 var busy = false;
 //start in the middle of the map
-var x = 87;
-var y = 44;
+var x = 60;
+var y = 140;
 var held_directions = []; //State of which arrow keys we are holding down
-var speed = 1; //How fast the character moves in pixels per frame
+var speed = .5; //How fast the character moves in pixels per frame
 
 document.addEventListener("keyup", function (event) {
    if (event.keyCode === 69) {
@@ -47,6 +47,81 @@ const placeCharacter = () => {
       selectedRoom = 1;
    }
    if (selectedRoom === 1) {
+      semafoor = false;
+      upstairs.style.backgroundImage = `url("img/outside.gif")`;
+      interactText.style.display = "none";
+      var leftLimit = -2;
+      var rightLimit = (16 * 11) + 2;
+      var topLimit = 3;
+      var bottomLimit = 160;
+      //fence and walls
+      if (x === 48 && y > 80) { 
+         x = 48.5;
+      }
+      if (x < 48 && y === 80) { 
+         y = 79.5;
+      }
+      //rabbit
+      if (x === 39 && y > 63) {
+         x = 39.5
+      }
+      if (x === 16 && y > 63) {
+         x = 15.5
+      }
+      if (x > 16 && x < 39 && y > 63) {
+         y = 63;
+      }
+      //house
+      if (x === 112 && y < 58) { 
+         x = 111.5;
+      }
+      if (x > 90 && y === 58) { 
+         y = 58.5;
+      }
+      if (x > 90 && y < 59) { 
+         interactText.style.display = "block";
+         document.addEventListener("keyup", function (event) {
+            if (event.keyCode === 69) {
+               setTimeout(() => { selectedRoom = 2 });
+               console.log(this.selectedRoom);
+            }
+         });
+      }
+      //cat & sign
+      if (x === 90 && y < 59 && y > 16) {
+         x = 89.5
+      }
+      if (x === 76 && y < 36 && y > 16) {
+         x = 75.5;
+      }
+      if (x > 76 && y === 36) {
+         y = 36.5;
+      }
+      if (x > 76 && y === 16) {
+         y = 15.5;
+      }
+      //rocks
+      if (x === 129 && y > 80) { 
+         x = 128.5;
+      }
+      if (x > 75 && y === 122) { 
+         y = 122.5;
+      }
+      if (x > 75 && y === 80) { 
+         y = 79.5;
+      }
+      if (x === 75 && y < 122 && y > 80)  {
+         x = 74.5;
+      }
+      //tree
+      if (x < 53 && y === 37) {
+         y=37.5;
+      }
+      if (x === 53 && y < 37) {
+         x = 53.5;
+      }
+   } 
+   if (selectedRoom === 2) {
       semafoor = false;
       upstairs.style.backgroundImage = `url("img/house.gif")`;
       interactText.style.display = "none";
@@ -239,7 +314,7 @@ function closeComputer() {
       computer.style.display = "block"
    }
    upstairs.style.backgroundImage = `url("img/upstairs.gif")`;
-   setTimeout(() => { selectedRoom = 0 }, 500);
+   setTimeout(() => { selectedRoom = 2 }, 500);
 }
 
 function typeWriter() {
