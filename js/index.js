@@ -82,8 +82,9 @@ const placeCharacter = () => {
          interactText.style.display = "block";
          document.addEventListener("keyup", function (event) {
             if (event.keyCode === 69) {
-               setTimeout(() => { selectedRoom = 2 });
-               console.log(this.selectedRoom);
+               x = 90;
+               y = 40;
+               setTimeout(() => { selectedRoom = 2;});
             }
          });
       }
@@ -123,60 +124,59 @@ const placeCharacter = () => {
    } 
    if (selectedRoom === 2) {
       semafoor = false;
-      upstairs.style.backgroundImage = `url("img/house.gif")`;
+      upstairs.style.backgroundImage = `url("img/house2.gif")`;
       interactText.style.display = "none";
+      
       var leftLimit = -2;
       var rightLimit = (16 * 11) + 2;
       var topLimit = 29;
       var bottomLimit = 150;
-      //shelf
-      if (x > 170 && y === 48) { y = 47; }
-      if (x === 170 && y > 48 && y < 135) { x = 169; }
-      if (x > 170 && y === 135) { y = 136; }
-      //desk
-      if (x > 28 && x < 150 && y === 58) { y = 57; }
-      if (x === 28 && y > 58 && y < 128) { x = 27; }
-      if (x > 28 && x < 150 && y === 128) { y = 129; }
-      if (x === 150 && y > 58 && y < 128) { x = 151; }
-      //bank
-      if (x < 4 && y === 44) { y = 43; }
-      if (x === 4 && y > 44 && y < 90) { x = 5; }
-      if (x < 4 && y === 90) { y = 91; }
-      //interactions
-      if (x === 27 && y > 86 && y < 101) {
+      //kast
+      if (x === 112 && y < 43) {
+         x = 111.5;
+      }
+      if (x > 112 && x < 175 && y === 43) {
+         y = 43.5;
+      }
+      if (x === 175 && y < 43) {
+         x = 175.5;
+      }
+      // desktop
+      if (y === 127 && x > 95 && x < 175) {
+         y = 126.5;
+      }
+      if (y > 127 && x === 95) {
+         x = 94.5;
+      }
+      if (y > 127 && x === 175) {
+         x = 175.5;
+      }
+      if (y > 126 && x > 120 && x < 175) {
          interactText.style.display = "block";
          document.addEventListener("keyup", function (event) {
             if (event.keyCode === 69) {
-               aboutme.style.display = "block";
-               interactText.style.display = "none";
+               openAboutMe();
+               x = 143;
+               y = 126;
             }
          });
-      } else {
-         aboutme.style.display = "none";
       }
-      if (x > 83 && x < 99 && y === 129) {
-         interactText.style.display = "block"; document.addEventListener("keyup", function (event) {
-            if (event.keyCode === 69) {
-               computer.style.display = "block";
-               interactText.style.display = "none";
-            }
-         });
-      } else {
-         computer.style.display = "none";
+      if (x < 9 && y === 35) {
+         y = 34.5;
       }
-
-      if (x === 151 && y > 86 && y < 101) {
-         interactText.style.display = "block"; document.addEventListener("keyup", function (event) {
-            if (event.keyCode === 69) {
-               contactme.style.display = "block";
-               interactText.style.display = "none";
-            }
-         });
-      } else {
-         contactme.style.display = "none";
+      if (x === 9 && y > 35 && y < 90) {
+         x = 9.5;
       }
-
-      
+      if (x < 30 && y === 88) {
+         y = 87.5;
+      }
+      if ( x === 65 && y > 88) {
+         x = 65.5;
+      }
+      if (x > 30 && x < 65 && y === 88) {
+         y = 83.5;
+      }
+    
    }
    if (x < leftLimit) { x = leftLimit; }
    if (x > rightLimit) { x = rightLimit; }

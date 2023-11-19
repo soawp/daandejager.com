@@ -125,7 +125,7 @@
  }
  #downstairs {
    image-rendering: pixelated;
-   background: url("img/house.gif");
+   background: url("img/house2.gif");
    background-size: 100%;
    width: calc(13 * var(--grid-cell));
    height: calc(12 * var(--grid-cell));
