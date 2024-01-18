@@ -103,12 +103,35 @@
  }
  #aboutme {
    image-rendering: pixelated;
-   background: url("img/aboutbook.png");
+   background: url("img/laptop.png");
    background-size: 100%;
    width: calc(13 * var(--grid-cell));
    height: calc(12 * var(--grid-cell));
    position: absolute;
    z-index: 100000000;
+ }
+ .infoButton{}
+
+ #aboutme div {
+   margin: 25%;
+ }
+ .welcomeText img{
+   margin: 5px;
+   user-drag: none;
+   -webkit-user-drag: none;
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+ }
+ .welcomeText img:hover{
+   cursor: pointer;
+ }
+ .aboutDaanSection {
+   display: none;
+ }
+ .contactDaanSection {
+   display: none;
  }
  .contactForm {
     position: absolute;
@@ -340,3 +363,25 @@
 .interactImage{
    display: inline;
 }
+.aboutDaanSection {
+   margin: 0px;
+   padding: 0px;
+}
+.aboutDaanSection {
+   image-rendering: pixelated;
+   background: url("img/aboutMe.gif");
+   background-size: 100%;
+   width: calc(13 * var(--grid-cell));
+   height: calc(12 * var(--grid-cell));
+   position: absolute;
+   z-index: 100000000;
+ }
+ .aboutDaanSection .computerText{
+   width: 400px;
+   margin-left: 7%;
+   margin-top: 30%;
+   color: white;
+ }
+ #aboutCloseBtn {
+   position: absolute;
+ }

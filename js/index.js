@@ -1,3 +1,4 @@
+
 var character = document.querySelector(".character");
 var map = document.querySelector(".map");
 var upstairs = document.getElementById("upstairs");
@@ -8,6 +9,8 @@ var interactText = document.getElementById("interactText");
 var aboutme = document.getElementById("aboutme");
 var computer = document.getElementById("computer");
 var contactme = document.getElementById("contactme");
+var infoButton = document.getElementById("infoButton");
+var contactButton = document.getElementById("mailButton");
 
 
 var data = false;
@@ -26,6 +29,12 @@ var speed = .5; //How fast the character moves in pixels per frame
 document.addEventListener("keyup", function (event) {
    if (event.keyCode === 69) {
    }
+});
+infoButton.addEventListener("click", function (event) {
+   openAboutDaan();
+});
+contactButton.addEventListener("click", function (event) {
+   window.location.href = "mailto:daandejager2003@gmail.com";
 });
 
 const placeCharacter = () => {
@@ -151,7 +160,7 @@ const placeCharacter = () => {
       if (y > 127 && x === 175) {
          x = 175.5;
       }
-      if (y > 126 && x > 120 && x < 175) {
+      if (y > 125 && x > 120 && x < 175) {
          interactText.style.display = "block";
          document.addEventListener("keyup", function (event) {
             if (event.keyCode === 69) {
@@ -182,8 +191,8 @@ const placeCharacter = () => {
    if (x > rightLimit) { x = rightLimit; }
    if (y < topLimit) { y = topLimit; }
    if (y > bottomLimit) { y = bottomLimit; }
-   console.log(x, y);
-   console.log(busy);
+   // console.log(x, y);
+   // console.log(busy);
    character.style.transform = `translate3d( ${x * pixelSize}px, ${y * pixelSize}px, 0 )`;
 }
 
@@ -218,8 +227,8 @@ const keys = {
 }
 
 if (!busy) {
-   console.log("busy");
-   console.log(busy);
+   // console.log("busy");
+   // console.log(busy);
 document.addEventListener("keydown", (e) => {
    var dir = keys[e.which];
    if (dir && held_directions.indexOf(dir) === -1) {
@@ -317,6 +326,7 @@ function closeComputer() {
    setTimeout(() => { selectedRoom = 2 }, 500);
 }
 
+
 function typeWriter() {
    if (i < text.length) {
       document.getElementById("dialogText").innerHTML += text.charAt(i);
@@ -344,6 +354,38 @@ function openContactMe() {
       x.style.display = "block";
    } else {
       x.style.display = "none";
+   }
+}
+function openAboutDaan() {
+   var x = document.getElementById("aboutme");
+   var welcomeSection = document.getElementById("welcomeText");
+   var aboutMe = document.getElementById("aboutDaan");
+
+
+   if( aboutMe.style.display === "block") {
+   x.style.display = "block";
+   welcomeSection.style.display = "block";
+   aboutMe.style.display = "none";
+   } else {
+      x.style.display = "none";
+      welcomeSection.style.display = "none";
+      aboutMe.style.display = "block";
+   }
+}
+function openContactDaan() {
+   var x = document.getElementById("aboutme");
+   var welcomeSection = document.getElementById("welcomeText");
+   var contactDaan = document.getElementById("contactDaan");
+
+
+   if( contactDaan.style.display === "block") {
+   x.style.display = "block";
+   welcomeSection.style.display = "block";
+   contactDaan.style.display = "none";
+   } else {
+      x.style.display = "none";
+      welcomeSection.style.display = "none";
+      contactDaan.style.display = "block";
    }
 }
 
